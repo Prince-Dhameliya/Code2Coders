@@ -10,8 +10,9 @@ import {
   Stack,
   useDisclosure,
 } from "@chakra-ui/react";
-import React from "react";
+import React, {useEffect, useRef} from "react";
 import Peer from "simple-peer";
+import InsideModel1 from "./InsideModel1";
 import InsideModel from "./InsideModel";
 
 let myPeer: Peer;
@@ -29,8 +30,7 @@ export default function ChatAndAudio({ roomId, userId }) {
           <ModalHeader>Modal Title</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <InsideModel />
-            {/* <InsideModel /> */}
+            <InsideModel1 />
           </ModalBody>
           <ModalFooter>
             <Button onClick={onClose}>Close</Button>

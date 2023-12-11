@@ -25,7 +25,7 @@ export default function Landing(): JSX.Element {
           your fellow coders. Code collaboration with voice and chat rooms.
           <br />
           Connect with{" "}
-          <p style={{ color: "orange", display: "inline" }}>Chatcode</p>.
+          <p style={{ color: "orange", display: "inline" }}>Code2Coders</p>.
         </Text>
         <Stack spacing={6} direction={"row"}>
           <NextLink href="/joinroom">

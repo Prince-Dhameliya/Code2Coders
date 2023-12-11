@@ -23,27 +23,22 @@ import { useDebouncedEffect } from "../utils/useDebounceEffect";
 import { PREXIX_SERVER_URL } from "../utils/env";
 
 const languages = [
-  "c",
-  "cpp",
   "javascript",
   "java",
-  "kotlin",
   "python",
-  "python3",
-  "scala",
-  "swift",
-  "csharp",
-  "go",
-  "haskell",
-  "erlang",
-  "perl",
+  "xml",
   "ruby",
-  "php",
-  "bash",
-  "r",
-  "coffeescript",
+  "sass",
+  "markdown",
   "mysql",
+  "json",
+  "html",
+  "handlebars",
+  "golang",
+  "csharp",
+  "elixir",
   "typescript",
+  "css",
 ];
 
 const themes = [
@@ -302,11 +297,14 @@ export default function RoomControls(): JSX.Element {
                 }}
                 height={"69vh"}
                 width={"44vw"}
+                showPrintMargin={true}
+                showGutter={true}
+                highlightActiveLine={true}
                 fontSize={parseInt(fontSize, 10)}
                 setOptions={{
                   enableBasicAutocompletion: true,
                   enableLiveAutocompletion: true,
-                  enableSnippets: true,
+                  enableSnippets: false,
                   showLineNumbers: true,
                   tabSize: 2,
                 }}
@@ -339,9 +337,7 @@ export default function RoomControls(): JSX.Element {
               </Box>
               <Box>
                 <Text>
-                  <pre>
-                    Output Time(sec):{data.time} Result:{data.result}
-                  </pre>
+                    Output Time(sec) : {data.time} Result : {data.result}
                 </Text>
                 <Editor
                   mode={language}

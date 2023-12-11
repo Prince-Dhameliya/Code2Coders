@@ -1,7 +1,8 @@
 import axios from "axios";
 
 const ServerApi = axios.create({
-  baseURL: "https://c2c-server.onrender.com/",
+  baseURL: "http://localhost:8080/",
+  // baseURL: "https://c2c-server.onrender.com/",
   responseType: 'json',
 });
 

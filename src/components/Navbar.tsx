@@ -54,7 +54,7 @@ export default function withAction() {
             onClick={isOpen ? onClose : onOpen}
           />
           <HStack spacing={8} alignItems={"center"}>
-            <Box>ChatCode</Box>
+            <Box>Code2Coders</Box>
             <HStack
               as={"nav"}
               spacing={4}

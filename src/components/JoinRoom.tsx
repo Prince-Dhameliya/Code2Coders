@@ -15,7 +15,7 @@ import {
   AlertDescription,
   Box,
 } from "@chakra-ui/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ServerApi from "../utils/serverInstance";
 
 export default function JoinRoom(): JSX.Element {
@@ -24,6 +24,19 @@ export default function JoinRoom(): JSX.Element {
   const [userName, setUserName] = useState("");
   const [roomId, setRoomId] = useState("");
   const [password, setPassword] = useState("");
+
+  useEffect(() => {
+    const getUserInfo = () => {
+      const user = JSON.parse(localStorage.getItem("user"));
+      if(user?.UserName){
+        setUserName(user.UserName);
+      }
+      if(user?.RoomId) {
+        setRoomId(user.RoomId);
+      }
+    }
+    getUserInfo();
+  },[])
 
   const setUserNameEventHandler = (e) => {
     setUserName(e.target.value);
@@ -47,10 +60,8 @@ export default function JoinRoom(): JSX.Element {
         } else {
           if (res.data.UserId) {
             localStorage.setItem("user", JSON.stringify(res.data));
-
-           
           }
-//alert(res.data)
+          //alert(res.data)
           // console.log(res.data);
           location.replace(`/room/${roomId}`);
 
